@@ -1,0 +1,31 @@
+TRAINING NAIVE BAYES
+
+Step 0: Collect data and annotate the corpus
+
+Step 1: Preprocessing
+1.1 Lowercase
+1.2 Remove punctuation, urls, names
+1.3 Remove stop words
+1.4 Stemming
+1.5 Tokenize sentences
+
+Step 2:  Word Count
+
+freq(w, class)
+This process will produce a table. You can compute the sum of words and class in each corpus in the same step.
+
+Step 3: P(w | class)
+(freq(w, class) + 1)/(N_class + V_class)
+where V = # of unique words in the class
+
+Step 4: get lambda
+
+lambda(w) = log(p(w|pos)/p(w|neg))
+
+Step 5: Get the logprior
+
+D_pos = # of positive tweets
+D_neg = # of negative tweets
+logprior = log(D_pos/D_neg)
+
+NOTE: if the data set is balanced, then D_pos = D_neg, so logprior = 0
